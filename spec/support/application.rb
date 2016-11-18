@@ -1,7 +1,7 @@
 require "rails"
 require "rails/all"
 require 'switch_user/rails'
-
+require 'switch_user'
 
 class ApplicationController < ActionController::Base
   def require_user
@@ -53,6 +53,7 @@ module MyApp
     config.action_dispatch.show_exceptions = false
   end
 end
+
 Rails.application.initialize!
 Rails.application.routes.draw do
   get 'dummy/protected', :to => "dummy#protected"
